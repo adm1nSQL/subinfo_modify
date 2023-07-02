@@ -65,7 +65,7 @@ def get_filename_from_url(url):
                 base_url = match.group(1) + match.group(2)
             response = requests.get(url=base_url + '/auth/login', headers=headers, timeout=10)
             if response.status_code != 200:
-                response = requests.get(base_url, headers=headers, timeout=1)
+                response = requests.get(url=base_url, headers=headers, timeout=10)
             html = response.content
             soup = BeautifulSoup(html, 'html.parser')
             title = soup.title.string
