@@ -173,7 +173,7 @@ def subzh(url):
                     output_text = f'{url}\n该订阅已被转换过，不支持再次转换!'
                 else:
                     ss = parse.quote_plus(url)
-                    output_text = "https://api.183tk.tk/sub?target=clash&url=" + ss
+                    output_text = "https://api.183tk.tk/sub?target=clash&url=" + ss + '&emoji=true'
             except:
                 raise RuntimeError('网络错误，请重新尝试')
             final_output.append(output_text + '\n\n')
